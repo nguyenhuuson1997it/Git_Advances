@@ -2,22 +2,32 @@ Git:
     config: git config -g user.name="name" user.email="email"
     Repository: 
     # Commands
+
+    git:
         git init: khởi tạo git
-        git status: xem trạng thái của project 
+        git status: xem các trạng thái các file của project
         git add file | . : chuẩn bị lưu lại, thời điểm hiện tại của project
         git reset: reset git add không lưu nữa
         git commit -m 'message': lưu lại những file đã được git add
         git log :q | git log --oneline
         git checkout {id_commit}: trở lại một commit
         git checkout {branch_name}: trở lại một branch
+        nếu như đang trở lại một commit cũng có thể dùng git checkout master để quay về
         git branch: danh sách branch
         git checkout -b {branch_name}: khởi tạo một branch
         git merge {branch_name}: gộp branch
         git branch -d {branch_name}: xóa branch
+    Github:
         Local - Remote: 
-        git push {link_reponsitory} master: đẩy lên responsitory
         git remote add origin {link_responsitory} đặt tên cho link
-        Remote - Local
-        git clone {link_reponsitory}
+        git push -u origin {branch_name} đẩy lên một nhánh
+        git push {link_reponsitory} master: đẩy lên responsitory không cần dùng add origin
 
-        
+        Remote - Local
+        git clone {link_reponsitory}: clone responsitory
+        git checkout -b {branch_name} origin\{branch_name} lấy một nhánh trên remote, nếu nhánh đó có trên local thì xóa đi
+        git push -u origin {branch_name}: push lên một nhánh
+        git fetch origin: lấy tất cả các nhánh trên remote repository
+        merge branch có 2 cách: 1 là clone cả hai nhánh về rồi merge, 2 là merge ở github rồi pull về lại
+
+        Dùng fork để clone project, chỉnh sửa xong có thể pull request cho repository 
